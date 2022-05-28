@@ -45,6 +45,8 @@ AC_ARG_VAR(IP_BINARY, [Path for ip binary])
 if test -z "$IP_BINARY"; then
 	IP_BINARY=/bin/ip
 fi
+AC_ARG_ENABLE([enable-systemd],
+              AS_HELP_STRING([--enable-systemd], [Enable systemd]), AC_DEFINE([ENABLE_SYSTEMD], [], [Disable systemd using elogind]))
 AC_DEFINE_UNQUOTED([IP_BINARY], [$IP_BINARY], [Path for ip binary])
 
 #
