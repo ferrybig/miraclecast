@@ -1,5 +1,7 @@
+inc = include_directories('../..')
 m = c_compiler.find_library('m', required: false)
-executable('miracle-uibcctl', 'miracle-uibcctl.h', 'miracle-uibcctl.c',
+executable('miracle-uibcctl', 'uibcctl.h', 'uibcctl.c',
   install: true,
-  dependencies: [m, libmiracle_shared_dep]
+  include_directories: inc,
+  dependencies: [m, glib2, libmiracle_shared_dep]
 )
